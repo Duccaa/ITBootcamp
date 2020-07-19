@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #d6e0f5;
+}
+header{
+    background-color: #d6e0f5;
+    position: fixed;
+    width: 100vw;
+}
+.name {
+    color: #254c5f;
+    float: left;
+    padding: 20px 30px;
+}
+.main-nav {
+    float: right;
+    padding-right: 30px;
+}
+ul {
+    list-style: none;
+}
+li {
+    display: inline-block;
+    padding: 30px; 
+}
+a:link {
+    color: #66b3ff;
+    text-decoration: none;
+}
+a:visited {
+    color: #66b3ff;
+    text-decoration: none;
+}
+.quote {
+    background-image: url(https://i.imgur.com/o8iqUsj.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.quote > p {
+    color: #204060;
+    font-size: 20px;
+    padding-left: 400px;
+    padding-top: 350px;
+    padding-bottom: 450px;
+    padding-right: 400;
+}
+#about {
+    background-color: #ebfafa;
+    color: #204060;
+    font-size: 20px;
+    text-align: center;
+    padding: 150px;
+}
+#portfolio {
+    background-color: #e6f2ff;
+}
+.heading {
+    color: #254c5f;
+    text-align: center;
+    font-size: 40px;
+    padding: 50px;
+}
+.pejacevici {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: 40px;
+    opacity: 0.7;
+    display: inline-block;
+}
+.reanimacija {
+    width: 320px;
+    height: 300px;
+    padding: 20px ;
+    margin: 40px;
+    opacity: 0.7;
+    display: inline-block;
+} 
+.virtuelni-muzej {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: 40px;
+    opacity: 0.7;
+    display: inline-block;
+}
+#contact-form {
+    background-color: #ebfafa;
+    padding-left: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 600px;
+}
+h2 {
+    color:#204060;
+    font-size: 18px;
+}
+.txtb {
+    border: 1px solid #204060;
+    padding: 12px 18px;
+    margin: 8px; 
+    border-radius: 8px;
+}
+input, textarea {
+    width: 100%;
+    border: none;
+    background: #fff;
+    outline: none;
+    font-size: 16px;
+    margin-top: 6px; 
+}
+label {
+    color:#204060;
+    font-size: 16px;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+}
+button {
+    display: block;
+    background-color: #d6e0f5;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    color:#204060;
+    border: 0.5px solid;
+    margin: 6px;
+}
+footer {
+    color: #204060;
+}
+.copy-rights {
+    padding: 20px;
+    float: left;
+
+}
+.sub-nav {
+    padding : 20px;
+    float: right;
+}
