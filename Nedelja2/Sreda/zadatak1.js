@@ -5,7 +5,7 @@
     console.log(a * b);
     console.log(a / b);
     console.log(a % b);
-    console.log(b ^ a);
+    console.log(Math.pow(a ,b));
 }
 
 // zadatak sa časa
