@@ -1,13 +1,23 @@
-let f = 1
-let l = 1000
-for(; f <= l; f++){
-    if(f % 5 === 0){
-        console.log(f)
+
+{
+let count = 0;
+let i = 1;
+
+while(true) {
+    if(i % 5 === 0){
+        console.log(i)
+        count++
+    } 
+    if(count === 1000){
+        break
     }
+    i++
 }
-while(f <= l){
-    if(f % 5 === 0){
-        console.log(f)
+}
+
+for(let count = 0, i = 1; count < 1000; i++) {
+    if(i % 5 === 0){
+     console.log(i)
+     count++
     }
-    f++
 }
