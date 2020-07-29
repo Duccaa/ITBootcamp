@@ -5,15 +5,16 @@
 // }
 // console.log(maxValue(3, -150, 50));
 
-function maxValue(x, y, z) {
-    if(x > y && x > z) {
-        return x;
-    } else if (y > x && y > z) {
-        return y;
-    } else {
-        return z;
-    }
-}
-console.log(maxValue(3, -150, 50))
+ function maxValue(x, y, z) {
+     if(x >= y && x >= z) {
+         return x;
+     } else if (y >= x && y >= z) {
+         return y;
+     } else {
+         return z;
+     }
+ }
+ console.log(maxValue(3, -150, 50))
 
 //Jos uvek nisam skapirala kako da uradim sa Math.min, kao sto je Cvijan rekao ...
+
