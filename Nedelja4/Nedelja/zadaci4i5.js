@@ -73,7 +73,7 @@ const wrapperDiv = document.querySelector('.wrapper')
 const prikazPokemona= document.querySelector('#prikaz')
 const prikazPobednika = document.querySelector('#pobednik')
 
-prikazPokemona.addEventListener('click', (e) => {
+prikazPokemona.addEventListener('click', () => {
     pokemons.forEach(pokemon => { 
         const divPokemon = document.createElement('div')  
         const p = document.createElement('p')
@@ -81,14 +81,11 @@ prikazPokemona.addEventListener('click', (e) => {
         Characteristic: Attack: ${pokemon.characteristic.attack}, Defense: ${pokemon.characteristic.defense}, Speed: ${pokemon.characteristic.speed}`
         const image = document.createElement('img')
         image.src = pokemon.pokemonImg
+        image.width = '100'
 
         divPokemon.appendChild(p)
         divPokemon.appendChild(image)    
         wrapperDiv.appendChild(divPokemon)
-
-        // if(prikazPobednika === 'clicked') {
-        //     wrapperDiv.removeChild(divPokemon)
-        // }
     })  
 })
 
@@ -100,13 +97,9 @@ prikazPobednika.addEventListener('click', () => {
         Characteristic: Attack: ${pokemon.characteristic.attack}, Defense: ${pokemon.characteristic.defense}, Speed: ${pokemon.characteristic.speed}`
         const image = document.createElement('img')
         image.src = pokemon.pokemonImg
-
+        image.width = '100'
         divWinner.appendChild(p)
         divWinner.appendChild(image)    
         wrapperDiv.appendChild(divWinner)
-        
-        // if(prikazPokemona === 'clicked') {
-        //     wrapperDiv.removeChild(divWinner)
-        // }
     })  
 })
