@@ -1,11 +1,12 @@
-//4. Направити функцију која прима низ покемона, пореди покемоне по јачини и враћа као победника оног који има највећу јачину напада.
-//5. За дати html направити скрипту која:
-// 1. На клик на дугме прикажи покемоне приказује све покемоне из низа у формату 
+//Направити функцију која прима низ покемона, пореди покемоне по јачини и враћа као победника оног који има највећу јачину напада.
+// За дати html направити скрипту која:
+// 1. На клик на дугме прикажи покемоне приказује све покемоне из низа у формату :
 //     <div>
 //         <p>Opis pokemona</p>
 //         <img src="slika odgovarajućeg pokemona">
 //     </div>
-// 2. На клик на дугме прикажи најјачег покемона приказује покемона који има најјачи напад (користити функцију из 4. задатка) по истом формату.
+// 2. На клик на дугме прикажи најјачег покемона приказује покемона који има најјачи напад 
+// (користити већ написану функцију из 4. задатка) по истом формату.
 
 let pokemon045 = {
     name: 'Vileplume',
@@ -34,7 +35,7 @@ let pokemon164 = {
 let pokemon838 = {
     name: 'Carkol',
     type: ['Rock', 'Fire'],
-    abilities: ['Flame Body ', 'Steam Engine'],
+    abilities: ['Flame Body', 'Steam Engine'],
     characteristic: {
         attack: 40,
         defense: 60,
@@ -57,49 +58,65 @@ let pokemon879 = {
 
 let pokemons = [pokemon045, pokemon164, pokemon838, pokemon879]
 
-function strongetestPokemon(pokemonsSet) {
+function strongestPokemon (pokemonsSet) {
     let sortedPokemons = pokemonsSet.sort((a,b) => b.characteristic.attack - a.characteristic.attack)
-    let winner = sortedPokemons.filter(pokemon => pokemon.characteristic.attack === sortedPokemons[0].characteristic.attack)
+    let winner =  sortedPokemons.filter(pokemon => pokemon.characteristic.attack === sortedPokemons[0].characteristic.attack)
     //let winner = []
     // for(let i = 0; i < sortedPokemons.length; i++) {
     //     if (sortedPokemons[i].characteristic.attack === sortedPokemons[0].characteristic.attack)
     //         winner.push(sortedPokemons[i])
     //} 
     return winner
-} 
-console.log(strongetestPokemon(pokemons))
+}
+console.log(strongestPokemon(pokemons))
 
 const wrapperDiv = document.querySelector('.wrapper')
-const prikazPokemona= document.querySelector('#prikaz')
+const pokemoniDiv = document.querySelector('#pokemoniDiv')
+const pobednikDiv = document.querySelector('#pobednikDiv')
+const prikazPokemona = document.querySelector('#prikaz')
 const prikazPobednika = document.querySelector('#pobednik')
 
-prikazPokemona.addEventListener('click', () => {
-    pokemons.forEach(pokemon => { 
-        const divPokemon = document.createElement('div')  
-        const p = document.createElement('p')
-        p.innerHTML = `Neme: ${pokemon.name}; <br> Type: ${pokemon.type}; <br> Abilities: ${pokemon.abilities}; <br>
-        Characteristic: Attack: ${pokemon.characteristic.attack}, Defense: ${pokemon.characteristic.defense}, Speed: ${pokemon.characteristic.speed}`
-        const image = document.createElement('img')
-        image.src = pokemon.pokemonImg
-        image.width = '100'
+pokemons.forEach(pokemon => { 
+            const divPokemon = document.createElement('div')  
+            const p = document.createElement('p')
+            p.innerHTML = `Neme: ${pokemon.name}; <br> Type: ${pokemon.type}; <br> Abilities: ${pokemon.abilities}; <br>
+            Characteristic: Attack: ${pokemon.characteristic.attack}, Defense: ${pokemon.characteristic.defense}, Speed: ${pokemon.characteristic.speed}`
+            const image = document.createElement('img')
+            image.src = pokemon.pokemonImg
+            image.width = '100'
+            
+            divPokemon.appendChild(p)
+            divPokemon.appendChild(image)    
+            pokemoniDiv.appendChild(divPokemon)   
+})        
 
-        divPokemon.appendChild(p)
-        divPokemon.appendChild(image)    
-        wrapperDiv.appendChild(divPokemon)
-    })  
+strongestPokemon(pokemons).forEach(pokemon => {
+    const divWinner = document.createElement('div')  
+    const p = document.createElement('p')
+    p.innerHTML = `Neme: ${pokemon.name}; <br> Type: ${pokemon.type}; <br> Abilities: ${pokemon.abilities}; <br>
+    Characteristic: Attack: ${pokemon.characteristic.attack}, Defense: ${pokemon.characteristic.defense}, Speed: ${pokemon.characteristic.speed}`
+    const image = document.createElement('img')
+    image.src = pokemon.pokemonImg
+    image.width = '100'
+
+    divWinner.appendChild(p)
+    divWinner.appendChild(image)    
+    pobednikDiv.appendChild(divWinner)  
+})
+
+prikazPokemona.addEventListener('click', () => {
+    if(pokemoniDiv.classList.contains('hide')){
+        pokemoniDiv.classList.remove('hide')
+    } else  {
+        pokemoniDiv.classList.add('hide')
+    } 
 })
 
 prikazPobednika.addEventListener('click', () => {
-    strongetestPokemon(pokemons).forEach(pokemon => {
-        const divWinner = document.createElement('div')  
-        const p = document.createElement('p')
-        p.innerHTML = `Neme: ${pokemon.name}; <br> Type: ${pokemon.type}; <br> Abilities: ${pokemon.abilities}; <br>
-        Characteristic: Attack: ${pokemon.characteristic.attack}, Defense: ${pokemon.characteristic.defense}, Speed: ${pokemon.characteristic.speed}`
-        const image = document.createElement('img')
-        image.src = pokemon.pokemonImg
-        image.width = '100'
-        divWinner.appendChild(p)
-        divWinner.appendChild(image)    
-        wrapperDiv.appendChild(divWinner)
-    })  
-})
+    if(pobednikDiv.classList.contains('hide')){
+        pobednikDiv.classList.remove('hide')
+    } else  {
+        pobednikDiv.classList.add('hide')
+    }
+})  
+
