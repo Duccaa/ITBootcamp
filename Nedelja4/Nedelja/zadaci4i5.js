@@ -110,6 +110,9 @@ prikazPokemona.addEventListener('click', () => {
     } else  {
         pokemoniDiv.classList.add('hide')
     } 
+    // if(!pobednikDiv.classList.contains('hide')) {
+    //     pobednikDiv.classList.add('hide') 
+    // }
 })
 
 prikazPobednika.addEventListener('click', () => {
@@ -118,5 +121,8 @@ prikazPobednika.addEventListener('click', () => {
     } else  {
         pobednikDiv.classList.add('hide')
     }
+    // if(!pokemoniDiv.classList.contains('hide')) {
+    //     pokemoniDiv.classList.add('hide')
+    // }
 })  
 
