@@ -104,6 +104,6 @@ osoba5 = new Sluzbenik('Marko', 'Peric', 1977, 2008, 60000, 'sekretarijat')
 
 console.log(osoba1.ispis());
 console.log(osoba2.ispis());
-console.log(osoba3.ispis());
+console.log(osoba3.ispis()); 
 console.log(osoba4.ispis());
 console.log(osoba5.ispis());
