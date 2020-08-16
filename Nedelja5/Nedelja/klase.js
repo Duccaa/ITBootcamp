@@ -5,7 +5,7 @@
 //      Student osnovnih studija: smer osnovnih studija
 //      Student master studija: smer master studija
 // Zaposleni: godina zaposlenja, plata
-//  Nastavnik: omiljeni predmet, listu predmeta na kojima drži nastavu
+// Nastavnik: omiljeni predmet, listu predmeta na kojima drži nastavu
 //      Profesor: titula (docent, vanredni, redovni)
 //      Asistent: smer doktorskih studija
 // Službenik: odsek
@@ -28,6 +28,7 @@ class Student extends Covek {
         this.prosek = prosek
     }
 }
+
 class StudentOS extends Student {
     constructor(ime, prezime, godinaRodjenja, godinaStudija, prosek, smerOS) {
         super(ime, prezime, godinaRodjenja, godinaStudija, prosek)
@@ -37,6 +38,7 @@ class StudentOS extends Student {
         return `Student osnovnih studija: ${this.ime} ${this.prezime}, godina rodjenja: ${this.godinaRodjenja}, trenutna godina osnovnih studija: ${this.godinaStudija}, prosek: ${this.prosek}, smer: ${this.smerOS}`
     }
 }
+
 class StudentMA extends Student {
     constructor (ime, prezime, godinaRodjenja, godinaStudija, prosek, smerMA) {
         super(ime, prezime, godinaRodjenja, godinaStudija, prosek)
@@ -92,10 +94,12 @@ class Sluzbenik extends Zaposleni {
     } 
 }
 
+let predmeti = ['Koncepti i fenomeni evropske umetnosti i vizuelne kulture 19. veka', 'Evropska umetnost novog veka', 'Teorijski koncepti umetnosti i vizuelne kulture novog veka', 'Umetnost i vizuelna kultura mediteranskog sveta']
+
 osoba1 = new StudentOS('Janko', 'Jankovic', 1990, 'treca', 9.2, 'istorija umetnosti')
 osoba2 = new StudentMA('Pera', 'Markovic', 1996, 'prva', 9.8, 'muzeologija')
-osoba3 = new Profesor('Igor', 'Gajic', 1975, 2004, 120000, 'Koncepti i fenomeni evropske umetnosti i vizuelne kulture 19. veka', 'Koncepti i fenomeni evropske umetnosti i vizuelne kulture 19. veka, Evropska umetnost novog veka, Teorijski koncepti umetnosti i vizuelne kulture novog veka, Umetnost i vizuelna kultura mediteranskog sveta', 'redovni profesor' )
-osoba4 = new Asistent('Vuk', 'Dragic', 1988, 2018, 80000, 'Umetnost i vizuelna kultura mediteranskog sveta', 'Evropska umetnost novog veka, Umetnost i vizuelna kultura mediteranskog sveta', 'Umetnost novog veka')
+osoba3 = new Profesor('Igor', 'Gajic', 1975, 2004, 120000, predmeti[0], predmeti, 'redovni profesor' )
+osoba4 = new Asistent('Vuk', 'Dragic', 1988, 2018, 80000, predmeti[3], predmeti[1] + ', ' + predmeti[3], 'Umetnost novog veka')
 osoba5 = new Sluzbenik('Marko', 'Peric', 1977, 2008, 60000, 'sekretarijat')
 
 console.log(osoba1.ispis());
