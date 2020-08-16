@@ -13,6 +13,7 @@ function pizzaLifeSupply(numPerMonth, age) {
 }
 console.log(pizzaLifeSupply(10, 26));
 }
+
 {
 function pizzaLifeSupply(numPerMonth, age) {
     let sum = 0;
@@ -23,4 +24,11 @@ function pizzaLifeSupply(numPerMonth, age) {
     return sum;
 }
 console.log(pizzaLifeSupply(10, 26));
+}
+
+{
+function pizzaLifeSupply(numPerMonth, age) {
+    return (100 - age) * numPerMonth * 12
+}
+console.log(pizzaLifeSupply(10, 26))
 }

@@ -17,9 +17,19 @@ function maxValue(x, y, z) {
  }
  console.log(maxValue(3, -150, 50))
 }
+// function maxOdTri(x, y, z) {
+//     if(x >= y && x >= z)
+//         return x
+//     if(y >= z)   
+//         return y 
+//     else return z  
+// }
 {
  function maxValue(x, y, z) {
      return -Math.min(-x, -y, -z);
  }
  console.log(maxValue(3, -150, 50));
 }
+
+
+

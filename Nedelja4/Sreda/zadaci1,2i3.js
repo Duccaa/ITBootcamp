@@ -59,7 +59,7 @@ function segregateAbilities(pokemonsSet) {
     pokemonsAbilities.push(pokemon.abilities)
     })
     let concatAbitities = [].concat.apply([], pokemonsAbilities)
-    return concatAbitities
+    return concatAbitities 
 }
 console.log(segregateAbilities(pokemons))
 

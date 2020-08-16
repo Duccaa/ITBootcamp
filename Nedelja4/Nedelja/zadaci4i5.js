@@ -111,7 +111,7 @@ prikazPokemona.addEventListener('click', () => {
         pokemoniDiv.classList.add('hide')
     } 
     // if(!pobednikDiv.classList.contains('hide')) {
-    //     pobednikDiv.classList.add('hide') 
+    //     pobednikDiv.classList.add('hide'
     // }
 })
 
