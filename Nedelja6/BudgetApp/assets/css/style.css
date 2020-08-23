@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#total {
+    background-color: #919eab;  
+    height: 12em;
+}
+
+.title {
+    color: #ffffff;
+    text-align: center;
+    padding: 1em;
+    padding-bottom: 0.5em;
+}
+.paragraf {
+    padding: 0.5em;
+    text-align: center;
+}
+.prihod {
+    background-color: #52ab98;
+    padding: 0.2em;
+    display: inline-block;
+    width: 10em;
+}
+
+.rashod {
+    background-color: #c86363;
+    padding: 0.2em;
+    display: inline-block;
+    width: 10em;
+}
+
+#form-container {
+    background-color: #e4e7eb;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#budget-form {
+    padding: 0.5em;
+    
+}
+#select {
+    margin-right: 0.5em;
+    height: 2.35em;
+}
+#txt-description {
+    margin-right: 0.5em;
+    height: 2em;
+}
+#txt-value {
+    margin-right: 0.5em;
+    width: 5em;
+    height: 2em;
+}
+#submit {
+    height: 2em;
+    width: 2em;
+    border-radius: 50px;
+    border-color: red;
+    color: red;
+    outline: none;
+}
+.incomes {
+    padding: 1em;
+    width: 40%;
+}
+.expenses {
+    padding: 1em;
+    width: 40%;
+}
+.total {
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 1em;
+}
+.title-float {
+    float: left;
+}
+.rashod-float {
+  float: right;
+}  
+.number {
+    color: #ffffff;
+    padding-left: 1em;
+    padding-right: 0.5em;
+}
+
+.percent{
+    background: rgba(202, 200, 200, 0.5);
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 0.1em;
+}
+.warning {
+    color: #cd5c5c;
+}
+.list1-Title{
+    color: #52ab98;
+    border-bottom: inset;
+    border-color: #a9a9a9;
+    border-width: 0.01em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+.list2-Title{
+    color: #c86363;
+    border-bottom: inset;
+    border-color: #a9a9a9;
+    border-width: 0.01em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+#flex-box {
+    background-color: #ecd8f5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:stretch;
+    justify-content: space-around;
+    height: 60em;
+}
+.input{
+    border-bottom: inset;
+    border-color: #a9a9a9;
+    border-width: 0.01em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+.first-amount {
+    color: #52ab98;
+    float: right;
+}
+.second-float {
+    float: right;
+}
+.second-amount {
+    color: #c86363;
+    margin-right: 0.5em;
+}
+.list-percent {
+    background: rgba(228, 98, 98, 0.2);
+    border-radius: 3px;
+    color: #c86363;
+    font-size: 10px;
+    padding: 0.1em;
+}
+
+.hide {
+    display: none;
+}
+
+#delete {
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50px;
+    border-color: #c86363;
+    color: #c86363;
+    margin-right: 0.5em;
+    font-weight: bold;
+    font-size: 1em;
+    outline: none;
+}
