@@ -1,16 +1,16 @@
- //Апликација која служи за лако рачунање месечне зараде и потрошње 
-// Додатак*(није обавезан): Омогућити да се информације чувају негде и поново користе
-// Спецификације:
-// Постоји форма којом убацујемо информације о приходу/расходу и она се састоји од:
-//      Dropdown којим се бира приход/расход
-//      Текстуални опис трансакције (не може бити празан)
-//      Износ трансакције (пазити да се не уносе негативни бројеви,нити 0)
-//      Дугме за потврду, којим се убацују елементи у одговарајућу листу
-// Постоје две листе (једна за расходе, друга за приходе) (Напомена: Ове листе не мoрају конкретно бити ul или ol, већ се може реализовати на други начин, ако вам је лакше)
-// Елементима листе се на hover појављује дугме за уклањање тог елемента
-// Сваки елемент садржи Опис и цену, док елементи за расходе,садрже и додатну информацију о томе колики проценат од укупне зараде чине (ако смо зарадили 100рсд и потрошили 2.3рсд, поред трансакције од 2.3рсд стоји 2.3%)
-// Постоје информације о укупним приходима,расходима и укупном стању, које се мењају сваки пут када се нека од листа промене. Расход такође има информацију о проценту
-// Радити са модулима.
+/*Апликација која служи за лако рачунање месечне зараде и потрошње 
+Додатак*(није обавезан): Омогућити да се информације чувају негде и поново користе
+Спецификације:
+Постоји форма којом убацујемо информације о приходу/расходу и она се састоји од:
+     Dropdown којим се бира приход/расход
+     Текстуални опис трансакције (не може бити празан)
+     Износ трансакције (пазити да се не уносе негативни бројеви,нити 0)
+     Дугме за потврду, којим се убацују елементи у одговарајућу листу
+Постоје две листе (једна за расходе, друга за приходе) (Напомена: Ове листе не мoрају конкретно бити ul или ol, већ се може реализовати на други начин, ако вам је лакше)
+Елементима листе се на hover појављује дугме за уклањање тог елемента
+Сваки елемент садржи Опис и цену, док елементи за расходе,садрже и додатну информацију о томе колики проценат од укупне зараде чине (ако смо зарадили 100рсд и потрошили 2.3рсд, поред трансакције од 2.3рсд стоји 2.3%)
+Постоје информације о укупним приходима,расходима и укупном стању, које се мењају сваки пут када се нека од листа промене. Расход такође има информацију о проценту
+Радити са модулима.*/
 
 const month = ['Januaru', 'Februaru', 'Martu', 'Aprilu', 'Maju', 'Junu', 'Julu', 'Avgustu', 'Septembru', 'Oktobru', 'Novembru', 'Decembru'] 
 const niz1 = []
@@ -103,11 +103,10 @@ const addElementToDOM = () => {
                     pTitle2.textContent = 'RASHODI'
             divList2.appendChild(pTitle2)   
         listContainer.append(divList1, divList2)     
-    app.appendChild(listContainer)  
+    app.appendChild(listContainer)     
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-    
         if(!validForm (amount, description, select)) {
             const notValid = document.createElement('p')
                 notValid.className = 'warning'
@@ -198,15 +197,14 @@ const addElementToDOM = () => {
                 buttonDelete.classList.add('hide')
             })             
         }
-
         spanTotal.textContent = `${arraySum(niz1) - arraySum(niz2)}` 
         spanPrihod.innerHTML = `<span class="title-float">prihod</span><span class="number">+ ${arraySum(niz1)}</span>`
         spanRashod.innerHTML= `<span class="title-float">rashod</span><span class="rashod-float"><span class="number">- ${arraySum(niz2)}</span><span class="percent">${percentage(niz1, niz2)}%</span></span>`
         count++
-        resetForm(amount, description, select)
+        resetForm(amount, description, select)  
     }) 
     
 }
 addElementToDOM()
 
-//forma mi se ne cisti i procenat starih rashodi u listi se ne apdejtuju kada se doda novi prihod!
+//forma mi se ne cisti i procenat starih rashoda u listi se ne apdejtuju kada se doda novi prihod!
