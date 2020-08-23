@@ -170,7 +170,7 @@ const addElementToDOM = () => {
             console.log(niz2);
             // console.log(niz2[niz2.length - 1])     
 
-            var listItem2 = document.createElement('p')
+            const listItem2 = document.createElement('p')
                 listItem2.className = 'input'
                 listItem2.innerHTML =`<span>${description.value}</span><span class="second-float"><span class="second-amount">- ${amount.value }</span><span class="list-percent">${percent(amount.value, niz1)} %</span></span>`
                 const buttonDelete = document.createElement('button')
