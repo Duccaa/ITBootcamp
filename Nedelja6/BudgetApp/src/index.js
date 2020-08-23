@@ -44,7 +44,6 @@ const addElementToDOM = () => {
                 const spanPrihod = document.createElement('span')
                 spanPrihod.className = 'prihod'
                 spanPrihod.innerHTML = `<span class="title-float">prihod</span><span class="number">0</span>`
-                //spanPrihod.innerHTML = `<span class="title-float">prihod</span><span class="number">+ ${arraySum(niz1)}</span>`
             par2.appendChild(spanPrihod)
 
             const par3 = document.createElement('p')
@@ -52,7 +51,6 @@ const addElementToDOM = () => {
                 const spanRashod = document.createElement('span')
                 spanRashod.className = 'rashod'
                 spanRashod.innerHTML = `<span class="title-float">rashod</span><span class="number">0</span>`
-                // spanRashod.innerHTML= `<span class="title-float">rashod</span><span class="rashod-float"><span class="number">- ${arraySum(niz2)}</span><span class="percent">${percentage(niz1, niz2)}%</span></span>`
                 par3.appendChild(spanRashod)
 
         divTotal.append(title, par1, par2, par3)
@@ -107,6 +105,7 @@ const addElementToDOM = () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
+
         if(!validForm (amount, description, select)) {
             const notValid = document.createElement('p')
                 notValid.className = 'warning'
@@ -146,7 +145,6 @@ const addElementToDOM = () => {
             buttonDelete.addEventListener('click', (e) => {
                 e.target.parentElement.remove()
                 niz1.splice(niz1.indexOf(el => el.id === e.target.id), 1)
-
                 spanTotal.textContent = `${arraySum(niz1) - arraySum(niz2)}` 
                 spanPrihod.innerHTML = `<span class="title-float">prihod</span><span class="number">+ ${arraySum(niz1)}</span>`
                 spanRashod.innerHTML= `<span class="title-float">rashod</span><span class="rashod-float"><span class="number">- ${arraySum(niz2)}</span><span class="percent">${percentage(niz1, niz2)}%</span></span>`
@@ -172,7 +170,7 @@ const addElementToDOM = () => {
             console.log(niz2);
             // console.log(niz2[niz2.length - 1])     
 
-            const listItem2 = document.createElement('p')
+            var listItem2 = document.createElement('p')
                 listItem2.className = 'input'
                 listItem2.innerHTML =`<span>${description.value}</span><span class="second-float"><span class="second-amount">- ${amount.value }</span><span class="list-percent">${percent(amount.value, niz1)} %</span></span>`
                 const buttonDelete = document.createElement('button')
@@ -185,26 +183,27 @@ const addElementToDOM = () => {
             buttonDelete.addEventListener('click', (e) => {
                 e.target.parentElement.remove()
                 niz2.splice(niz2.indexOf(el => el.id === e.target.id), 1)
-
                 spanTotal.textContent = `${arraySum(niz1) - arraySum(niz2)}` 
                 spanPrihod.innerHTML = `<span class="title-float">prihod</span><span class="number">+ ${arraySum(niz1)}</span>`
                 spanRashod.innerHTML= `<span class="title-float">rashod</span><span class="rashod-float"><span class="number">- ${arraySum(niz2)}</span><span class="percent">${percentage(niz1, niz2)}%</span></span>`
             })
+
             listItem2.addEventListener('mouseover', () => {
                 buttonDelete.classList.remove('hide')
             })  
+
             listItem2.addEventListener('mouseout', () => {
                 buttonDelete.classList.add('hide')
-            })             
+            })        
         }
+
         spanTotal.textContent = `${arraySum(niz1) - arraySum(niz2)}` 
         spanPrihod.innerHTML = `<span class="title-float">prihod</span><span class="number">+ ${arraySum(niz1)}</span>`
         spanRashod.innerHTML= `<span class="title-float">rashod</span><span class="rashod-float"><span class="number">- ${arraySum(niz2)}</span><span class="percent">${percentage(niz1, niz2)}%</span></span>`
         count++
-        resetForm(amount, description, select)  
+        resetForm(amount, description, select)          
     }) 
-    
 }
 addElementToDOM()
 
-//forma mi se ne cisti i procenat starih rashoda u listi se ne apdejtuju kada se doda novi prihod!
+// procenat starih rashoda u listi se ne apdejtuju kada se doda novi prihod

@@ -6,11 +6,11 @@ export const validForm = (amount, description, select) =>
     && select.value !== '-'
 
 
-export const resetForm = (amount, description, select) => 
-    select.value == '-'
-    && description.value == ''
-    && amount.value == ''
-        
+export const resetForm = (amount, description, select) => {
+    select.value = '-'
+    description.value = ''
+    amount.value = ''
+}  
 export const arraySum = (array) => {   
     let sum = 0
     array.forEach(element => {
