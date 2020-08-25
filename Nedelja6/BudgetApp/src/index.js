@@ -158,7 +158,7 @@ const addElementToDOM = () => {
                 buttonDelete.classList.add('hide')
             })  
         } 
-        
+
         if(select.value === 'rashodi') {
             let rashod = {
                 id: count,
@@ -170,7 +170,7 @@ const addElementToDOM = () => {
             console.log(niz2);
             // console.log(niz2[niz2.length - 1])     
 
-            const listItem2 = document.createElement('p')
+            var listItem2 = document.createElement('p')
                 listItem2.className = 'input'
                 listItem2.innerHTML =`<span>${description.value}</span><span class="second-float"><span class="second-amount">- ${amount.value }</span><span class="list-percent">${percent(amount.value, niz1)} %</span></span>`
                 const buttonDelete = document.createElement('button')
@@ -194,15 +194,16 @@ const addElementToDOM = () => {
 
             listItem2.addEventListener('mouseout', () => {
                 buttonDelete.classList.add('hide')
-            })        
+            })           
         }
-
+        
         spanTotal.textContent = `${arraySum(niz1) - arraySum(niz2)}` 
         spanPrihod.innerHTML = `<span class="title-float">prihod</span><span class="number">+ ${arraySum(niz1)}</span>`
         spanRashod.innerHTML= `<span class="title-float">rashod</span><span class="rashod-float"><span class="number">- ${arraySum(niz2)}</span><span class="percent">${percentage(niz1, niz2)}%</span></span>`
         count++
-        resetForm(amount, description, select)          
+        resetForm(amount, description, select)       
     }) 
+    
 }
 addElementToDOM()
 

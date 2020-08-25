@@ -20,10 +20,12 @@ export const arraySum = (array) => {
 }
 
 export const percentage = (array1, array2) => {
-  return (arraySum(array2)/arraySum(array1)*100).toFixed(1) 
+    if(array1 == 0) return 0 
+    return (arraySum(array2)/arraySum(array1)*100).toFixed(1) 
 } 
 
 export const percent = (x, array) => {
+    if(array == 0) return 0 
     return (x/arraySum(array)*100).toFixed(1) 
 }
  
