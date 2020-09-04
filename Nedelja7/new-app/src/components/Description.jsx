@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Description = ({desc}) => {
+const Description = ({description}) => {
     return (
-    <p>{desc}</p>
+    <p>{description}</p>
     )
 }
 export default Description

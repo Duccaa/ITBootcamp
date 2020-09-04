@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Forma = ({string}) => {
+const Forma = ({txt}) => {
     return (
         <form>
             <input type="text"/>
-            <button>{string}</button>
+            <button>{txt}</button>
         </form>
     )
 }

@@ -2,11 +2,11 @@ import React from 'react'
 import Emoji from './Emoji'
 import Description from './Description'
 
-const Card = ({image}) => {
+const Card = ({img, dsc}) => {
     return (
         <div>
-            <Emoji emoji={image.url}/>
-            <Description desc={image.description}/>
+            <Emoji emoji={img}/>
+            <Description description={dsc}/>
         </div>
     )
 }
