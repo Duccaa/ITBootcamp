@@ -10,30 +10,33 @@ const App = () => {
 
   const [launches, setLaunches] = useState([])
   const [years, setYears] = useState([])
+  const [select, setSelect] = useState('')
     
   useEffect(() => {
     getPastLunches()
     .then(res => {
-      () => setLaunches(res.data)
-    })
-  }, [launches])
-
-  useEffect(() => {
+      setLaunches(res.data)
+    }) 
     const temp = [...launches]
     temp.map(launch => launch.launch_year).reduce((unique, launch) => unique.includes(launch) ? unique : [...unique, launch], [])
-    setYears(temp) 
-    console.log(years)
-  }, [years, launches])
+    setYears(temp)
+  },[])
+  
+  useEffect(() => {
+    getLunchesByYear(select)
+        .then(res => {
+          setLaunches(res.data)
+        })
+  }, [select])
+
+  const handleSelect = (e) => {
+    setSelect(e.target.value)
+  }
   
   return(
     <>
     <Header />
-    <Select years={years} onChange={(e) => {
-     getLunchesByYear(e.target.value)
-        .then(res =>
-          setLaunches(res.data)
-        )
-    }}/>
+    <Select years={years} handleSelect={handleSelect}/>
     <LaunchList launches={launches}/>
     </>
   )
