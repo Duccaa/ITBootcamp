@@ -4,40 +4,43 @@ import './index.css';
 import Header from './components/Header';
 import Select from './components/Select';
 import LaunchList from './components/LaunchList';
-import {getPastLunches, getLunchesByYear} from './services'
+import {getPastLunches, getLunchesByYear, getCompanyInfo} from './services'
 
 const App = () => {
 
+  const [comapanyInfo, setCompanyInfo] = useState({})
   const [launches, setLaunches] = useState([])
+  const [select, setSelect] = useState('')  
   const [years, setYears] = useState([])
-  const [select, setSelect] = useState('')
-    
+
   useEffect(() => {
+    getCompanyInfo()
+      .then(res => {
+        setCompanyInfo(res.data)
+    })
+    
     getPastLunches()
     .then(res => {
       setLaunches(res.data)
-    }) 
-    const temp = [...launches]
-    temp.map(launch => launch.launch_year).reduce((unique, launch) => unique.includes(launch) ? unique : [...unique, launch], [])
+      setYears(res.data.map(el => el.launch_year))
+    })
+    const temp = [...years]
+    temp.reduce((unique, el) => unique.includes(el) ? unique : [...unique, el], [])
     setYears(temp)
   },[])
-  
+
   useEffect(() => {
     getLunchesByYear(select)
         .then(res => {
           setLaunches(res.data)
         })
   }, [select])
-
-  const handleSelect = (e) => {
-    setSelect(e.target.value)
-  }
   
   return(
     <>
-    <Header />
-    <Select years={years} handleSelect={handleSelect}/>
-    <LaunchList launches={launches}/>
+    <Header company={comapanyInfo} />
+    <Select setSelect={setSelect} years={years} setYears={setYears}/>
+    <LaunchList launches={launches} />
     </>
   )
 }
@@ -48,3 +51,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+

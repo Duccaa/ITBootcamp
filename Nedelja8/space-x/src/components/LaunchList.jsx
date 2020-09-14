@@ -1,11 +1,11 @@
 import React from 'react'
+import Launch from './Launch'
 
 const LaunchList = ({launches}) => {
     return (
-        <>
-        {launches.map(launch => <p key={launch.launch_date_unix}> <img src={launch.links.mission_patch} alt="rocket-img" style={{width: '50px'}}/> {launch.rocket.rocket_name} | {launch.launch_year}</p>)}
-        </>
+        <div className="launch-list">
+        {launches.map(launch => <Launch key={launch.launch_date_unix} launch={launch}/>)}
+        </div>
     )
 }
-
 export default LaunchList 

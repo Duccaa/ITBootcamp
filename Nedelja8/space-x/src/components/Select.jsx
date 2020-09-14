@@ -1,12 +1,15 @@
 import React from 'react'
 
-const Select = ({years, handleSelect}) => {
-   
+const Select = ({setSelect, years}) => {
+
     return (
-        <select onChange={handleSelect}>
-            <option>Sva lansiranja</option>
-            {years.map(year => <option value={year} key={year}>{year}</option>)}
+        <div className='select-div'>
+            <label>Odaberite godinu lansiranja:</label>
+            <select id='select' onChange={(e) => setSelect(e.target.value)}>
+                <option>Sva lansiranja</option>
+                {years.map(year => <option value={year} key={year}>{year}</option>)}
         </select>
+        </div>
     )
 }
 

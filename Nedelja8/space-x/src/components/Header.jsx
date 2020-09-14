@@ -1,17 +1,10 @@
-import React, { useState } from 'react'
-import { getCompanyInfo } from '../services'
+import React from 'react'
 
-const Header = () => {
-    const [info, setInfo] = useState({})
-
-    getCompanyInfo().then(res => {
-        setInfo(res.data)
-    })
-
+const Header = ({company}) => {
     return (
-        <div class='header'>
-        <h1 className='title'>{info.name}</h1>
-        </div>
+        <header id='main-header'>
+            <h1>{company.name}</h1>
+        </header>
     )
 }
 
