@@ -23,6 +23,7 @@ const App = () => {
     .then(res => {
       setLaunches(res.data)
       setYears(res.data.map(el => el.launch_year).reduce((unique, el) => unique.includes(el) ? unique : [...unique, el], []))
+      console.log(res.data)
     })
     
   },[])
