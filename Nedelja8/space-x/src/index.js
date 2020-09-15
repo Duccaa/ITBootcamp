@@ -22,11 +22,9 @@ const App = () => {
     getPastLunches()
     .then(res => {
       setLaunches(res.data)
-      setYears(res.data.map(el => el.launch_year))
+      setYears(res.data.map(el => el.launch_year).reduce((unique, el) => unique.includes(el) ? unique : [...unique, el], []))
     })
-    const temp = [...years]
-    temp.reduce((unique, el) => unique.includes(el) ? unique : [...unique, el], [])
-    setYears(temp)
+    
   },[])
 
   useEffect(() => {
@@ -51,4 +49,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
