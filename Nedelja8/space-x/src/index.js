@@ -4,13 +4,12 @@ import './index.css';
 import Header from './components/Header';
 import Select from './components/Select';
 import LaunchList from './components/LaunchList';
-import {getPastLunches, getLunchesByYear, getCompanyInfo} from './services'
+import {getPastLunches, getCompanyInfo} from './services'
 
 const App = () => {
 
   const [comapanyInfo, setCompanyInfo] = useState({})
   const [launches, setLaunches] = useState([])
-  const [select, setSelect] = useState('')  
   const [years, setYears] = useState([])
 
   useEffect(() => {
@@ -27,18 +26,11 @@ const App = () => {
     })
     
   },[])
-
-  useEffect(() => {
-    getLunchesByYear(select)
-        .then(res => {
-          setLaunches(res.data)
-        })
-  }, [select])
   
   return(
     <>
     <Header company={comapanyInfo} />
-    <Select setSelect={setSelect} years={years} setYears={setYears}/>
+    <Select years={years} setLaunches={setLaunches} />
     <LaunchList launches={launches} />
     </>
   )
